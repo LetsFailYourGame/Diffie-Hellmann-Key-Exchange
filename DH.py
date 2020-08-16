@@ -8,7 +8,7 @@ crypto_gen = SystemRandom()
 p = crypto_gen.getrandbits(128)
 alpha = crypto_gen.getrandbits(128)
 
-#  MAKE SURE ALPHA IS A GENERATOR
+#  MAKE SURE ALPHA IS A GENERATOR AND SMALLER THAN p
 while alpha > p and sqm(alpha, int((p - 1) / 2), p) != 1:
     if not sqm(alpha, p - 1, p) == 1:
         alpha = crypto_gen.getrandbits(128)
